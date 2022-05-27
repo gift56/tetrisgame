@@ -13,7 +13,13 @@ body {
   background-color: blue;
 }
 
-.grid {
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .grid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24,12 +30,12 @@ body {
   background-color: yellow;
 }
 
-.grid div {
+.container .grid div {
   width: 20px;
   height: 20px;
 }
 
-.miniGrid {
+.container .miniGrid {
   width: 80px;
   height: 80px;
   display: -webkit-box;
@@ -38,9 +44,10 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   background: yellow;
+  margin-left: 50px;
 }
 
-.miniGrid div {
+.container .miniGrid div {
   width: 20px;
   height: 20px;
   background-color: red;
