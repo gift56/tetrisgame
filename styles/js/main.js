@@ -148,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const upNextTetramino = [
         [1, displayWidth + 1, displayWidth * 2 + 1, 2], // LTetramino
         [0, displayWidth, displayWidth + 1, displayWidth * 2 + 1], // ZTetramino
-        []
+        [1, displayWidth, displayWidth + 1, displayWidth + 2], //Ttetramino
+        [0, 1, displayWidth, displayWidth + 1] //OTetramino
     ]
 });
