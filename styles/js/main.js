@@ -57,5 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
             square[currentPosition + index].classList.add('tetramino')
         })
     }
-    drawTetramino();
+
+    const unDrawTetramino = () => {
+        current.forEach(index => {
+            square[currentPosition + index].classList.remove('tetramino')
+        })
+    }
 });
