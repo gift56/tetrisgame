@@ -47,4 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPosition = 4;
     let current = mainTetramino[0][0]
 
+    const drawTetramino = () => {
+        current.forEach(index => {
+            square[currentPosition + index].classList.add('tetramino')
+        })
+    }
+    drawTetramino();
 });
