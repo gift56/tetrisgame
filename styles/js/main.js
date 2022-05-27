@@ -125,5 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const isRightEdge = current.some(index => (currentPosition + index) % width === width - 1);
 
         if (!isRightEdge) currentPosition += 1
+
+        if (current.some(index => square[currentPosition + index].classList.contains('taken'))) {
+            currentPosition -= 1;
+        }
+        drawTetramino();
     }
 });
