@@ -28,4 +28,21 @@ body {
   width: 20px;
   height: 20px;
 }
+
+.miniGrid {
+  width: 80px;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background: yellow;
+}
+
+.miniGrid div {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+}
 /*# sourceMappingURL=style.css.map */

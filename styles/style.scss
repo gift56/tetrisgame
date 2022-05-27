@@ -13,3 +13,15 @@
         height: 20px;
     }
 }
+.miniGrid{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    background: yellow;
+    div{
+        width: 20px;
+        height: 20px;
+        background-color: red;
+    }
+}
