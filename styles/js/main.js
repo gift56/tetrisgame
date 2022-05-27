@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const displaySquare = document.querySelectorAll('.miniGrid div');
     const displayWidth = 4;
     let displayIndex = 0;
+    let nextRandom = 0;
     const width = 10;
 
     const tetraminoLshape = [
@@ -103,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             current.forEach(index => square[currentPosition + index].classList.add('taken'))
 
             // new tetramino shape falling
+            random = nextRandom;
             random = Math.floor(Math.random() * mainTetramino.length)
             current = mainTetramino[random][currentRotation]
             currentPosition = 4
@@ -149,6 +151,16 @@ document.addEventListener('DOMContentLoaded', () => {
         [1, displayWidth + 1, displayWidth * 2 + 1, 2], // LTetramino
         [0, displayWidth, displayWidth + 1, displayWidth * 2 + 1], // ZTetramino
         [1, displayWidth, displayWidth + 1, displayWidth + 2], //Ttetramino
-        [0, 1, displayWidth, displayWidth + 1] //OTetramino
+        [0, 1, displayWidth, displayWidth + 1], //OTetramino
+        [1, displayWidth + 1, displayWidth * 2 + 1, displayWidth * 3 + 1] //ITetramino
     ]
+
+    // showing the minGrid function
+    const displayShape = () => {
+        displaySquare.forEach(square => {
+            square.classList.remove('tetramino');
+        })
+        upNextTetramino[nextRandom]
+    }
+
 });
