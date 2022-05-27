@@ -65,12 +65,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Downward movement
-    
+
     const moveDown = () => {
         unDrawTetramino();
         currentPosition += width
         drawTetramino();
+        freezeTetramino();
     }
-    
+
     timeId = setInterval(moveDown, 1000)
+
+    // freeze tetramino function
+
+    const freezeTetramino = () => {
+        if (current.some(index => square[currentPosition + index + width].classList.contains('taken'))) {
+            current.forEach(index => square[currentPosition + index].classList.add('taken'))
+
+            // new tetramino shape falling
+            random = Math.floor(Math.random() * mainTetramino.length)
+            current = mainTetramino[random][currentRotation]
+            currentPosition = 4
+            drawTetramino();
+        }
+    }
 });
