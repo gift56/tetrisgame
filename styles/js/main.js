@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     let currentPosition = 4;
+    //generating random shape from our array length
+    let randomTetra = Math.floor(Math.random() * mainTetramino.length);
     let current = mainTetramino[0][0]
 
     const drawTetramino = () => {
