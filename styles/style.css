@@ -9,6 +9,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.tetramino {
+  background-color: blue;
+}
+
 .grid {
   display: -webkit-box;
   display: -ms-flexbox;
