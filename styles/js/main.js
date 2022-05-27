@@ -131,4 +131,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         drawTetramino();
     }
+
+    const rotate = () => {
+        unDrawTetramino();
+        currentRotation++
+        if (currentRotation === current.length) {
+            currentRotation = 0
+        }
+        current = mainTetramino[random][currentRotation]
+        drawTetramino();
+    }
 });
