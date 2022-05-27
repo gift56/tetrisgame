@@ -39,4 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
         [0, 1, width, width + 1],
         [0, 1, width, width + 1],
     ]
+
+    const mainTetramino = [tetraminoLshape, tetraminoZshape, tetraminoTshape, tetraminoOshape, tetraminoIshape]
 });
