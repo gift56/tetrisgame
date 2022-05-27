@@ -63,4 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
             square[currentPosition + index].classList.remove('tetramino')
         })
     }
+
+    // Downward movement
+    
+    const moveDown = () => {
+        unDrawTetramino();
+        currentPosition += width
+        drawTetramino();
+    }
+    
+    timeId = setInterval(moveDown, 1000)
 });
