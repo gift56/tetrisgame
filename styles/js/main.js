@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const scorceDisplay = document.querySelector('#score');
     const startBtn = document.querySelector('#startBtn');
     let square = Array.from(document.querySelectorAll('.grid div'));
+    const displaySquare = document.querySelectorAll('.miniGrid div');
+    const displayWidth = 4;
+    let displayIndex = 0;
     const width = 10;
 
     const tetraminoLshape = [
@@ -141,4 +144,10 @@ document.addEventListener('DOMContentLoaded', () => {
         current = mainTetramino[random][currentRotation]
         drawTetramino();
     }
+
+    const upNextTetramino = [
+        [1, displayWidth + 1, displayWidth * 2 + 1, 2], // LTetramino
+        [0, displayWidth, displayWidth + 1, displayWidth * 2 + 1], // ZTetramino
+        []
+    ]
 });
