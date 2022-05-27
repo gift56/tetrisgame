@@ -64,19 +64,37 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+    // keyboard functions
+
+    const control = (e) => {
+        if (e.keyCode === 37 || e.keycode === 'ArrowRight') {
+            leftMovement();
+        }
+        else if (e.keyCode === 38 || e.keyCode === 'ArrowUp') {
+            rotate();
+        }
+        else if (e.keyCode === 39 || e.keyCode === 'ArrowRight') {
+            rightMovement();
+        }
+        else if (e.keyCode === 40 || e.keyCode === 'ArrowDown') {
+            moveDown();
+        }
+    }
+
+
+    document.addEventListener('keyup', control);
+
     // Downward movement
 
     const moveDown = () => {
         unDrawTetramino();
-        currentPosition += width
+        currentPosition += width;
         drawTetramino();
         freezeTetramino();
     }
-
-    timeId = setInterval(moveDown, 1000)
+    timeId = setInterval(moveDown, 1000);
 
     // freeze tetramino function
-
     const freezeTetramino = () => {
         if (current.some(index => square[currentPosition + index + width].classList.contains('taken'))) {
             current.forEach(index => square[currentPosition + index].classList.add('taken'))
@@ -94,11 +112,18 @@ document.addEventListener('DOMContentLoaded', () => {
         unDrawTetramino();
         const isLeftEdge = current.some(index => (currentPosition + index) % width === 0);
 
-        if (!isLeftEdge) { current -= 1 }
+        if (!isLeftEdge) currentPosition -= 1
 
         if (current.some(index => square[currentPosition + index].classList.contains('taken'))) {
             currentPosition += 1;
-            drawTetramino();
         }
+        drawTetramino();
+    }
+
+    const rightMovement = () => {
+        unDrawTetramino();
+        const isRightEdge = current.some(index => (currentPosition + index) % width === width - 1);
+
+        if (!isRightEdge) currentPosition += 1
     }
 });
