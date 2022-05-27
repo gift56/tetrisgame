@@ -26,6 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
         [width + 1, width + 2, width * 2, width * 2 + 1],
     ]
 
+    const tetraminoIshape = [
+        [1, width + 1, width * 2 + 1, width * 3 + 1],
+        [width, width + 1, width + 2, width + 3],
+        [1, width + 1, width * 2 + 1, width * 3 + 1],
+        [width, width + 1, width + 2, width + 3],
+    ]
+
     const tetraminoOshape = [
         [0, 1, width, width + 1],
         [0, 1, width, width + 1],
