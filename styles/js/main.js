@@ -41,4 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
 
     const mainTetramino = [tetraminoLshape, tetraminoZshape, tetraminoTshape, tetraminoOshape, tetraminoIshape]
+
+
+
+    let currentPosition = 4;
+    let current = mainTetramino[0][0]
+
 });
