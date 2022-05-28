@@ -54,6 +54,16 @@ body {
           align-items: center;
   font-family: "Ubuntu Mono", monospace;
   margin-bottom: 12px;
+  background-color: #808080;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+@media screen and (min-width: 800px) {
+  .scoreArea h3 {
+    -webkit-transform: translateY(-73px);
+            transform: translateY(-73px);
+  }
 }
 
 .scoreArea button {
