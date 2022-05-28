@@ -5,9 +5,10 @@
 }
 body {
     display: flex;
-    flex-direction: column;
     min-height: 100vh;
     align-items: center;
     justify-content: center;
     font-family: "Roboto", sans-serif;
+    background: url("/styles/img/tetris.jpg") no-repeat center center/cover;
+    color: #fff;
 }

@@ -9,10 +9,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   min-height: 100vh;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -21,6 +17,8 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   font-family: "Roboto", sans-serif;
+  background: url("/styles/img/tetris.jpg") no-repeat center center/cover;
+  color: #fff;
 }
 
 .tetramino {
