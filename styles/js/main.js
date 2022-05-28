@@ -53,8 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //generating random shape from our array length
 
-    let randomTetra = Math.floor(Math.random() * mainTetramino.length);
-    let current = mainTetramino[randomTetra][currentRotation]
+    let random = Math.floor(Math.random() * mainTetramino.length);
+    let current = mainTetramino[random][currentRotation]
 
     const drawTetramino = () => {
         current.forEach(index => {
@@ -102,13 +102,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const freezeTetramino = () => {
         if (current.some(index => square[currentPosition + index + width].classList.contains('taken'))) {
             current.forEach(index => square[currentPosition + index].classList.add('taken'))
-
             // new tetramino shape falling
             random = nextRandom;
-            random = Math.floor(Math.random() * mainTetramino.length)
+            nextRandom = Math.floor(Math.random() * mainTetramino.length)
             current = mainTetramino[random][currentRotation]
             currentPosition = 4
             drawTetramino();
+            displayShape();
         }
     }
 
@@ -160,7 +160,9 @@ document.addEventListener('DOMContentLoaded', () => {
         displaySquare.forEach(square => {
             square.classList.remove('tetramino');
         })
-        upNextTetramino[nextRandom]
+        upNextTetramino[nextRandom].forEach(index => {
+            displaySquare[displayIndex + index].classList.add("tetramino")
+        })
     }
 
 });
