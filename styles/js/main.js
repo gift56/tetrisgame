@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const displayShape = () => {
         displaySquare.forEach(square => {
             square.classList.remove('tetramino');
-            square.style.background = ''
+            square.style.background = '';
         })
         upNextTetramino[nextRandom].forEach(index => {
             displaySquare[displayIndex + index].classList.add("tetramino")
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startBtn.addEventListener('click', () => {
         if (timerId) {
             timerId = null;
-            clearInterval(timerId)
+            clearInterval(timerId);
         }
         else {
             drawTetramino();
