@@ -35,6 +35,12 @@ body {
   background-color: blue;
 }
 
+@media screen and (min-width: 800px) {
+  .scoreArea {
+    margin-right: 20px;
+  }
+}
+
 .scoreArea h3 {
   display: -webkit-box;
   display: -ms-flexbox;
