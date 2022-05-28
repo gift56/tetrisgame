@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const width = 10;
     let timerId;
     let score = 0;
-    const colors = ['orange', 'red', 'purple', 'grey', 'blue'];
+    const colors = ['orange', 'red', 'purple', 'yellow', 'green'];
 
     const tetraminoLshape = [
         [1, width + 1, width * 2 + 1, 2],
