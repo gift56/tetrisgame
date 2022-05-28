@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector(".grid");
-    const scorceDisplay = document.querySelector('#score');
+    const scoreDisplay = document.querySelector('#score');
     const startBtn = document.querySelector('#startBtn');
     let square = Array.from(document.querySelectorAll('.grid div'));
     const displaySquare = document.querySelectorAll('.miniGrid div');
@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let displayIndex = 0;
     let nextRandom = 0;
     const width = 10;
+    let timerId;
+    let score = 0;
 
     const tetraminoLshape = [
         [1, width + 1, width * 2 + 1, 2],
@@ -110,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentPosition = 4
             drawTetramino();
             displayShape();
+            addScore();
         }
     }
 
@@ -168,7 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // targeting the start and pause button
     startBtn.addEventListener('click', () => {
-        timerId = null;
         if (timerId) {
             timerId = null;
             clearInterval(timerId)
@@ -179,7 +181,25 @@ document.addEventListener('DOMContentLoaded', () => {
             nextRandom = Math.floor(Math.random() * mainTetramino.length)
             displayShape();
         }
-    })
+    });
+
+    const addScore = () => {
+        for (let i = 0; i < 199; i += width) {
+            
+            const row = [i, i + 1, i + 2, i + 3, i + 4, i + 5, i + 6, i + 7, i + 8, i + 9,]
+
+            if (row.every(index => square[index].classList.contains("taken"))) {
+                score += 10
+                scoreDisplay.innerHTML = score
+                row.forEach(index => {
+                    square[index].classList.remove('taken')
+                })
+                const squareRemove = square.splice(i, width)
+                console.log(squareRemove)
+            }
+        }
+    }
+
 
 
 });
