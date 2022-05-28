@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const width = 10;
     let timerId;
     let score = 0;
+    const colors = ['orange', 'red', 'purple', 'grey', 'blue'];
 
     const tetraminoLshape = [
         [1, width + 1, width * 2 + 1, 2],
@@ -61,12 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const drawTetramino = () => {
         current.forEach(index => {
             square[currentPosition + index].classList.add('tetramino')
+            square[currentPosition + index].style.background = colors[random]
         })
     }
 
     const unDrawTetramino = () => {
         current.forEach(index => {
             square[currentPosition + index].classList.remove('tetramino')
+            square[currentPosition + index].style.background = '';
         })
     }
 
@@ -113,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             addScore();
             drawTetramino();
             displayShape();
+            gameOver();
         }
     }
 
@@ -163,9 +167,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const displayShape = () => {
         displaySquare.forEach(square => {
             square.classList.remove('tetramino');
+            square.style.background = ''
         })
         upNextTetramino[nextRandom].forEach(index => {
             displaySquare[displayIndex + index].classList.add("tetramino")
+            displaySquare[displayIndex + index].style.background = colors[nextRandom]
         })
     }
 
@@ -194,6 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 row.forEach(index => {
                     square[index].classList.remove('taken')
                     square[index].classList.remove('tetramino')
+                    square[index].style.background = '';
                 })
                 const squareRemove = square.splice(i, width)
                 square = squareRemove.concat(square);
@@ -202,6 +209,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    const gameOver = () => {
+        if (current.some(index => square[currentPosition + index].classList.contains('taken'))) {
+            scoreDisplay.innerHTML = 'End'
+            clearInterval(timerId)
+        }
 
+    }
 
 });
