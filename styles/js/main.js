@@ -165,4 +165,19 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+    // targeting the start and pause button
+    startBtn.addEventListener('click', () => {
+        if (timeId) {
+            clearInterval(timeId)
+            timeId = null;
+        }
+        else {
+            drawTetramino();
+            timeId = setInterval(moveDown, 1000)
+            nextRandom = Math.floor(Math.random() * mainTetramino.length)
+            displayShape();
+        }
+    })
+
+
 });
