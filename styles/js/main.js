@@ -96,7 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
         drawTetramino();
         freezeTetramino();
     }
-    timeId = setInterval(moveDown, 1000);
+
+    // timeId = setInterval(moveDown, 1000);
 
     // freeze tetramino function
     const freezeTetramino = () => {
@@ -167,13 +168,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // targeting the start and pause button
     startBtn.addEventListener('click', () => {
-        if (timeId) {
-            clearInterval(timeId)
-            timeId = null;
+        timerId = null;
+        if (timerId) {
+            timerId = null;
+            clearInterval(timerId)
         }
         else {
             drawTetramino();
-            timeId = setInterval(moveDown, 1000)
+            timerId = setInterval(moveDown, 1000)
             nextRandom = Math.floor(Math.random() * mainTetramino.length)
             displayShape();
         }
