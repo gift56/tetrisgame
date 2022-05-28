@@ -1,6 +1,25 @@
 @import "./modules/reset";
 @import "./modules/classes";
 
+.scoreArea {
+    h3 {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: center;
+        font-family: "Ubuntu Mono", monospace;
+        margin-bottom: 12px;
+    }
+    button {
+        width: 100%;
+        padding: 9px 20px;
+        border: 1px solid #21dc21;
+        border-radius: 9px;
+        background-color: #21dc21;
+        color: #fff;
+    }
+}
+
 .container {
     display: flex;
     justify-content: center;

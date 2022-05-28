@@ -35,6 +35,30 @@ body {
   background-color: blue;
 }
 
+.scoreArea h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Ubuntu Mono", monospace;
+  margin-bottom: 12px;
+}
+
+.scoreArea button {
+  width: 100%;
+  padding: 9px 20px;
+  border: 1px solid #21dc21;
+  border-radius: 9px;
+  background-color: #21dc21;
+  color: #fff;
+}
+
 .container {
   display: -webkit-box;
   display: -ms-flexbox;

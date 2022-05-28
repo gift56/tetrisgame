@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         unDrawTetramino();
         currentRotation++
         if (currentRotation === current.length) {
-            currentRotation = 0
+            currentRotation = 0;
         }
         current = mainTetramino[random][currentRotation]
         drawTetramino();
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const gameOver = () => {
         if (current.some(index => square[currentPosition + index].classList.contains('taken'))) {
-            scoreDisplay.innerHTML = 'End'
+            scoreDisplay.innerHTML = 'GameOver'
             clearInterval(timerId)
         }
     }
