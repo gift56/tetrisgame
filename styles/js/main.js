@@ -193,6 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 row.forEach(index => {
                     square[index].classList.remove('taken')
+                    square[index].classList.remove('tetramino')
                 })
                 const squareRemove = square.splice(i, width)
                 square = squareRemove.concat(square);
