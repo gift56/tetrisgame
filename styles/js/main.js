@@ -49,13 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const mainTetramino = [tetraminoLshape, tetraminoZshape, tetraminoTshape, tetraminoOshape, tetraminoIshape]
 
-
-
     let currentPosition = 4;
     let currentRotation = 0;
 
     //generating random shape from our array length
-
     let random = Math.floor(Math.random() * mainTetramino.length);
     let current = mainTetramino[random][currentRotation]
 
@@ -74,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // keyboard functions
-
     const control = (e) => {
         if (e.keyCode === 37 || e.keycode === 'ArrowRight') {
             leftMovement();
@@ -90,19 +86,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
     document.addEventListener('keyup', control);
 
     // Downward movement
-
     const moveDown = () => {
         unDrawTetramino();
         currentPosition += width;
         drawTetramino();
         freezeTetramino();
     }
-
-    // timeId = setInterval(moveDown, 1000);
 
     // freeze tetramino function
     const freezeTetramino = () => {
@@ -214,7 +206,5 @@ document.addEventListener('DOMContentLoaded', () => {
             scoreDisplay.innerHTML = 'End'
             clearInterval(timerId)
         }
-
     }
-
 });
