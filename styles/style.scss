@@ -3,6 +3,9 @@
 
 .container {
     display: flex;
+    justify-content: center;
+    align-items: baseline;
+
     .grid {
         display: flex;
         flex-wrap: wrap;
