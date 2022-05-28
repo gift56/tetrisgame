@@ -109,10 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
             random = nextRandom;
             nextRandom = Math.floor(Math.random() * mainTetramino.length)
             current = mainTetramino[random][currentRotation]
-            currentPosition = 4
+            currentPosition = 4;
+            addScore();
             drawTetramino();
             displayShape();
-            addScore();
         }
     }
 
@@ -185,17 +185,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const addScore = () => {
         for (let i = 0; i < 199; i += width) {
-            
             const row = [i, i + 1, i + 2, i + 3, i + 4, i + 5, i + 6, i + 7, i + 8, i + 9,]
 
             if (row.every(index => square[index].classList.contains("taken"))) {
                 score += 10
                 scoreDisplay.innerHTML = score
+
                 row.forEach(index => {
                     square[index].classList.remove('taken')
                 })
                 const squareRemove = square.splice(i, width)
-                console.log(squareRemove)
+                square = squareRemove.concat(square);
+                square.forEach(cell => grid.appendChild(cell))
             }
         }
     }
