@@ -5,6 +5,10 @@
     display: flex;
     justify-content: center;
     align-items: baseline;
+    @media screen and(max-width:800px) {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
 
     .grid {
         display: flex;
