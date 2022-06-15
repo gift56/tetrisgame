@@ -8,9 +8,9 @@
     }
     h3 {
         display: flex;
+        align-items: center;
         justify-content: space-between;
         gap: 1rem;
-        align-items: center;
         font-family: "Ubuntu Mono", monospace;
         margin-bottom: 12px;
         background-color: $hText;
@@ -23,12 +23,12 @@
     button {
         width: 100%;
         padding: 9px 20px;
-        border: 1px solid #21dc21;
+        border: 1px solid $buttton;
         border-radius: 9px;
-        background-color: #21dc21;
+        background-color: $buttton;
         font-size: 16px;
         font-weight: 600;
-        color: #fff;
+        color: $white;
         &:hover {
             background: #87ff87;
             color: black;
