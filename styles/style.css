@@ -80,6 +80,7 @@ body {
 .scoreArea button:hover {
   background: #87ff87;
   color: black;
+  cursor: pointer;
 }
 
 .container {
