@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (row.every(index => square[index].classList.contains("taken"))) {
                 score += 10
-                scoreDisplay.innerHTML = score
+                scoreDisplay.innerHTML = score;
 
                 row.forEach(index => {
                     square[index].classList.remove('taken')
